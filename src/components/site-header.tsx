@@ -135,6 +135,8 @@ export function SiteHeader() {
           </a>
         </Button>
       </aside>
+        </>
+      )}
     </>
   );
 }
