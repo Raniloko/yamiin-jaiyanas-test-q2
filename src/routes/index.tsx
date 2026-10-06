@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Bike, MapPin, ShoppingBag, Sparkles } from "lucide-react";
+import { ArrowRight, Bike, MapPin, ShoppingBag } from "lucide-react";
 
 import ysHeroAsset from "@/assets/menu/hero-ys.webp.asset.json";
 import { Button } from "@/components/ui/button";
@@ -25,32 +25,23 @@ const WOLT = "https://wolt.com/de/deu/hanau/restaurant/yamiin-jaiyanas-healthy-f
 function Home() {
   return (
     <main className="overflow-hidden bg-background text-foreground">
-      <section className="border-b border-border">
-        <div className="mx-auto grid min-h-[42rem] max-w-[90rem] items-center gap-8 px-5 py-16 sm:px-8 lg:grid-cols-[0.88fr_1.12fr] lg:py-20">
-          <div className="relative z-10 max-w-2xl">
-            <p className="inline-flex rounded-full bg-muted px-4 py-2 text-xs font-semibold text-secondary">Bowls · Açaí · Matcha · Coffee</p>
-            <h1 className="mt-7 text-6xl leading-[0.88] sm:text-8xl lg:text-[7.6rem]">
-              Where good<br />people <em className="text-secondary">eat well.</em>
-            </h1>
-            <p className="mt-7 max-w-md text-base leading-7 text-muted-foreground sm:text-lg">Frisch zubereitet, liebevoll angerichtet – und alle Nährwerte immer im Blick.</p>
+      <section className="relative isolate min-h-[42rem] overflow-hidden border-b border-border bg-[#292725] text-[#f5f0e8] sm:min-h-[48rem]">
+        <img src={ysHeroAsset.url} alt="Frische Signature Bowl von Yamiin & Jaiyana's" className="absolute inset-0 -z-20 size-full object-cover object-center opacity-80 transition duration-1000 hover:scale-[1.03]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(30,28,25,.94)_0%,rgba(30,28,25,.68)_46%,rgba(30,28,25,.18)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_80%_20%,rgba(217,148,109,.26),transparent_32%)]" />
+        <div className="mx-auto flex min-h-[42rem] max-w-[90rem] items-center px-5 py-20 sm:min-h-[48rem] sm:px-8 lg:py-24">
+          <div className="relative z-10 max-w-3xl">
+            <p className="mb-7 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold text-[#f5c3a6] backdrop-blur-md">Bowls · Açaí · Matcha · Coffee</p>
+            <h1 className="text-6xl leading-[0.88] sm:text-8xl lg:text-[7.6rem]">Where good<br />people <em className="text-[#f5c3a6]">eat well.</em></h1>
+            <p className="mt-7 max-w-md text-base leading-7 text-white/75 sm:text-lg">Frisch zubereitet, liebevoll angerichtet – und alle Nährwerte immer im Blick.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="h-12 rounded-full bg-foreground px-6 text-background shadow-none hover:-translate-y-0.5 hover:bg-secondary">
-                <Link to="/speisekarte">Zu den Bowls <ArrowRight /></Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="h-12 rounded-full border-border bg-card px-6 shadow-none hover:-translate-y-0.5 hover:bg-muted">
-                <Link to="/speisekarte" hash="create">Bowl selbst bauen</Link>
-              </Button>
+              <div className="hero-glow-button rounded-full p-px">
+                <Button asChild size="lg" className="h-12 rounded-full bg-[#f5f0e8] px-6 text-[#292725] shadow-none hover:bg-[#f5c3a6]"><Link to="/speisekarte">Zu den Bowls <ArrowRight /></Link></Button>
+              </div>
+              <Button asChild size="lg" variant="outline" className="h-12 rounded-full border-white/35 bg-white/10 px-6 text-[#f5f0e8] shadow-none backdrop-blur-sm hover:bg-white/20"><Link to="/speisekarte" hash="create">Bowl selbst bauen</Link></Button>
             </div>
           </div>
-
-          <div className="group relative mx-auto min-h-[24rem] w-full max-w-3xl overflow-hidden rounded-[2rem] bg-[#292725] shadow-2xl sm:min-h-[31rem]">
-            <img src={ysHeroAsset.url} alt="Frische Signature Bowl von Yamiin & Jaiyana's" className="absolute inset-0 size-full object-cover object-center opacity-85 transition duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#292725]/90 via-[#292725]/10 to-[#292725]/20" />
-            <div className="absolute left-5 top-5 z-10 inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#292725]/30 px-4 py-2 text-xs font-semibold uppercase tracking-[.16em] text-[#f5f0e8] backdrop-blur-md sm:left-8 sm:top-8"><Sparkles className="size-4 text-[#d9946d]" /> Hanau, frisch auf den Tisch</div>
-            <div className="absolute bottom-5 left-5 right-5 z-10 flex items-end justify-between gap-4 text-[#f5f0e8] sm:bottom-8 sm:left-8 sm:right-8"><div><p className="text-xs uppercase tracking-[.2em] text-[#d9946d]">Yamiin & Jaiyana&apos;s</p><p className="mt-2 font-display text-3xl sm:text-5xl">Frisch. Bunt. Echt.</p></div><span className="hidden rounded-full border border-white/30 px-3 py-1 text-xs sm:inline-flex">Healthy Fastfood</span></div>
-          </div>
         </div>
-
       </section>
 
       <section className="mx-auto max-w-[90rem] px-5 py-20 sm:px-8 sm:py-28">
