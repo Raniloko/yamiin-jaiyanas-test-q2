@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Bike, MapPin, Play, ShoppingBag, Sparkles } from "lucide-react";
+import { ArrowRight, Bike, MapPin, ShoppingBag, Sparkles } from "lucide-react";
 
-import falafelHeroAsset from "@/assets/menu/hero-falafel.webp.asset.json";
-import midoriHeroAsset from "@/assets/menu/hero-midori.webp.asset.json";
 import ysHeroAsset from "@/assets/menu/hero-ys.webp.asset.json";
 import { Button } from "@/components/ui/button";
 import { acais, matchas } from "@/lib/menu-data";
@@ -45,23 +43,14 @@ function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto min-h-[24rem] w-full max-w-3xl overflow-hidden rounded-[2rem] bg-[#292725] p-5 shadow-2xl sm:min-h-[31rem] sm:p-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(200,120,80,.38),transparent_38%),radial-gradient(circle_at_80%_90%,rgba(238,229,217,.2),transparent_42%)]" />
-            <div className="relative z-20 flex items-center justify-between text-xs font-semibold uppercase tracking-[.18em] text-[#f5f0e8]"><span className="inline-flex items-center gap-2"><Sparkles className="size-4 text-[#d9946d]" /> Hanau, frisch auf den Tisch</span><span className="rounded-full border border-white/20 px-3 py-1">01 / 06</span></div>
-            <img src={falafelHeroAsset.url} alt="Falafel Exotica Bowl" className="absolute bottom-2 left-[0%] z-10 w-[46%] drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
-            <img src={ysHeroAsset.url} alt="Y's Signature Bowl" className="absolute left-1/2 top-10 z-20 w-[59%] -translate-x-1/2 drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
-            <img src={midoriHeroAsset.url} alt="Midori Ebi Bowl" className="absolute bottom-0 right-[-1%] z-10 w-[46%] drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
-            <div className="absolute bottom-5 left-5 z-30 flex items-center gap-3 rounded-full bg-[#f5f0e8] px-4 py-3 text-sm font-semibold text-[#292725] shadow-xl sm:bottom-8 sm:left-8"><span className="flex size-9 items-center justify-center rounded-full bg-[#c87850] text-white"><Play className="ml-0.5 size-4 fill-current" /></span><span>Unser Menü entdecken</span></div>
+          <div className="group relative mx-auto min-h-[24rem] w-full max-w-3xl overflow-hidden rounded-[2rem] bg-[#292725] shadow-2xl sm:min-h-[31rem]">
+            <img src={ysHeroAsset.url} alt="Frische Signature Bowl von Yamiin & Jaiyana's" className="absolute inset-0 size-full object-cover object-center opacity-85 transition duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#292725]/90 via-[#292725]/10 to-[#292725]/20" />
+            <div className="absolute left-5 top-5 z-10 inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#292725]/30 px-4 py-2 text-xs font-semibold uppercase tracking-[.16em] text-[#f5f0e8] backdrop-blur-md sm:left-8 sm:top-8"><Sparkles className="size-4 text-[#d9946d]" /> Hanau, frisch auf den Tisch</div>
+            <div className="absolute bottom-5 left-5 right-5 z-10 flex items-end justify-between gap-4 text-[#f5f0e8] sm:bottom-8 sm:left-8 sm:right-8"><div><p className="text-xs uppercase tracking-[.2em] text-[#d9946d]">Yamiin & Jaiyana&apos;s</p><p className="mt-2 font-display text-3xl sm:text-5xl">Frisch. Bunt. Echt.</p></div><span className="hidden rounded-full border border-white/30 px-3 py-1 text-xs sm:inline-flex">Healthy Fastfood</span></div>
           </div>
         </div>
 
-        <div className="mx-auto grid max-w-[90rem] gap-3 px-5 pb-14 sm:grid-cols-3 sm:px-8">
-          {[["6", "Signature Bowls"], ["bis 48,5 g", "Protein"], ["Vegan", "Optionen"]].map(([value, label]) => (
-            <div key={label} className="rounded-lg border border-border bg-card px-6 py-5 text-center">
-              <p className="font-display text-2xl">{value}</p><p className="mt-1 text-xs text-muted-foreground">{label}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
       <section className="mx-auto max-w-[90rem] px-5 py-20 sm:px-8 sm:py-28">
