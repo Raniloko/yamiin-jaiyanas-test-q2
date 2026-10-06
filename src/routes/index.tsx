@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Bike, MapPin, ShoppingBag } from "lucide-react";
+import { ArrowRight, Bike, MapPin, Play, ShoppingBag, Sparkles } from "lucide-react";
 
 import falafelHeroAsset from "@/assets/menu/hero-falafel.webp.asset.json";
 import midoriHeroAsset from "@/assets/menu/hero-midori.webp.asset.json";
@@ -45,10 +45,13 @@ function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto min-h-[24rem] w-full max-w-3xl sm:min-h-[31rem]">
-            <img src={falafelHeroAsset.url} alt="Falafel Exotica Bowl" className="absolute bottom-3 left-[2%] w-[43%] drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
-            <img src={ysHeroAsset.url} alt="Y's Signature Bowl" className="absolute left-1/2 top-0 z-10 w-[56%] -translate-x-1/2 drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
-            <img src={midoriHeroAsset.url} alt="Midori Ebi Bowl" className="absolute bottom-3 right-[1%] w-[43%] drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
+          <div className="relative mx-auto min-h-[24rem] w-full max-w-3xl overflow-hidden rounded-[2rem] bg-[#292725] p-5 shadow-2xl sm:min-h-[31rem] sm:p-8">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(200,120,80,.38),transparent_38%),radial-gradient(circle_at_80%_90%,rgba(238,229,217,.2),transparent_42%)]" />
+            <div className="relative z-20 flex items-center justify-between text-xs font-semibold uppercase tracking-[.18em] text-[#f5f0e8]"><span className="inline-flex items-center gap-2"><Sparkles className="size-4 text-[#d9946d]" /> Hanau, frisch auf den Tisch</span><span className="rounded-full border border-white/20 px-3 py-1">01 / 06</span></div>
+            <img src={falafelHeroAsset.url} alt="Falafel Exotica Bowl" className="absolute bottom-2 left-[0%] z-10 w-[46%] drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
+            <img src={ysHeroAsset.url} alt="Y's Signature Bowl" className="absolute left-1/2 top-10 z-20 w-[59%] -translate-x-1/2 drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
+            <img src={midoriHeroAsset.url} alt="Midori Ebi Bowl" className="absolute bottom-0 right-[-1%] z-10 w-[46%] drop-shadow-2xl transition-transform duration-500 hover:-translate-y-2" />
+            <div className="absolute bottom-5 left-5 z-30 flex items-center gap-3 rounded-full bg-[#f5f0e8] px-4 py-3 text-sm font-semibold text-[#292725] shadow-xl sm:bottom-8 sm:left-8"><span className="flex size-9 items-center justify-center rounded-full bg-[#c87850] text-white"><Play className="ml-0.5 size-4 fill-current" /></span><span>Unser Menü entdecken</span></div>
           </div>
         </div>
 
