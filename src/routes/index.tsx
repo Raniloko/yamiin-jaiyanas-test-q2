@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Bike, MapPin, ShoppingBag } from "lucide-react";
 
-import ysHeroAsset from "@/assets/menu/hero-ys.webp.asset.json";
+import heroBowlImage from "@/assets/hero-bowl.jpg";
 import { Button } from "@/components/ui/button";
 import { acais, matchas } from "@/lib/menu-data";
 
@@ -26,7 +26,7 @@ function Home() {
   return (
     <main className="overflow-hidden bg-background text-foreground">
       <section className="relative isolate min-h-[42rem] overflow-hidden border-b border-border bg-[#292725] text-[#f5f0e8] sm:min-h-[48rem]">
-        <img src={ysHeroAsset.url} alt="Frische Signature Bowl von Yamiin & Jaiyana's" className="absolute inset-0 -z-20 size-full object-cover object-center opacity-80 transition duration-1000 hover:scale-[1.03]" />
+        <img src={heroBowlImage} alt="Frische Signature Bowl von Yamiin & Jaiyana's" className="absolute inset-0 -z-20 size-full object-cover object-center opacity-80 transition duration-1000 hover:scale-[1.03]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(30,28,25,.94)_0%,rgba(30,28,25,.68)_46%,rgba(30,28,25,.18)_100%)]" />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_80%_20%,rgba(217,148,109,.26),transparent_32%)]" />
         <div className="mx-auto flex min-h-[42rem] max-w-[90rem] items-center px-5 py-20 sm:min-h-[48rem] sm:px-8 lg:py-24">
@@ -54,9 +54,9 @@ function Home() {
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {[
-            { label: "Signature Bowls", note: "Klein oder groß", image: ysHeroAsset.url, hash: "bowls" },
-            { label: "Taste the Matcha", note: "Cremig & fruchtig", image: matchas.at(0)?.image ?? ysHeroAsset.url, hash: "matcha" },
-            { label: "Açaí Specials", note: "Jedes Special 11,90 €", image: acais.at(0)?.image ?? ysHeroAsset.url, hash: "acai" },
+            { label: "Signature Bowls", note: "Klein oder groß", image: heroBowlImage, hash: "bowls" },
+            { label: "Taste the Matcha", note: "Cremig & fruchtig", image: matchas.at(0)?.image ?? heroBowlImage, hash: "matcha" },
+            { label: "Açaí Specials", note: "Jedes Special 11,90 €", image: acais.at(0)?.image ?? heroBowlImage, hash: "acai" },
           ].map((item) => (
             <Link key={item.label} to="/speisekarte" hash={item.hash} className="group overflow-hidden rounded-lg border border-border bg-card outline-none transition duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring">
               <div className="overflow-hidden bg-muted"><img src={item.image} alt={item.label} className="aspect-[4/3] w-full object-contain p-4 transition duration-500 group-hover:scale-105" /></div>
