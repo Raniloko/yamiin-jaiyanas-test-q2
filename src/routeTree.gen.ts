@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as KitchenRouteImport } from './routes/kitchen'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as SpeisekarteRouteImport } from './routes/speisekarte'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
@@ -17,6 +18,11 @@ import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchenRoute = KitchenRouteImport.update({
+  id: '/kitchen',
+  path: '/kitchen',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KontaktRoute = KontaktRouteImport.update({
@@ -37,12 +43,14 @@ const UeberUnsRoute = UeberUnsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/kitchen': typeof KitchenRoute
   '/kontakt': typeof KontaktRoute
   '/speisekarte': typeof SpeisekarteRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kitchen': typeof KitchenRoute
   '/kontakt': typeof KontaktRoute
   '/speisekarte': typeof SpeisekarteRoute
   '/ueber-uns': typeof UeberUnsRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/kitchen': typeof KitchenRoute
   '/kontakt': typeof KontaktRoute
   '/speisekarte': typeof SpeisekarteRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/kontakt' | '/speisekarte' | '/ueber-uns'
+  fullPaths: '/' | '/kitchen' | '/kontakt' | '/speisekarte' | '/ueber-uns'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/kontakt' | '/speisekarte' | '/ueber-uns'
-  id: '__root__' | '/' | '/kontakt' | '/speisekarte' | '/ueber-uns'
+  to: '/' | '/kitchen' | '/kontakt' | '/speisekarte' | '/ueber-uns'
+  id: '__root__' | '/' | '/kitchen' | '/kontakt' | '/speisekarte' | '/ueber-uns'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KitchenRoute: typeof KitchenRoute
   KontaktRoute: typeof KontaktRoute
   SpeisekarteRoute: typeof SpeisekarteRoute
   UeberUnsRoute: typeof UeberUnsRoute
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchen': {
+      id: '/kitchen'
+      path: '/kitchen'
+      fullPath: '/kitchen'
+      preLoaderRoute: typeof KitchenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kontakt': {
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KitchenRoute: KitchenRoute,
   KontaktRoute: KontaktRoute,
   SpeisekarteRoute: SpeisekarteRoute,
   UeberUnsRoute: UeberUnsRoute,
