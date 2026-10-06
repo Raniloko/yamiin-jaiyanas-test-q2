@@ -1,0 +1,11 @@
+- [x] Logo als Markenbild und Favicon integrieren
+- [x] Gemeinsame Navigation mit animiertem Hamburger-Menü bauen
+- [x] Startseite im gewählten Galerie-Stil reduzieren
+- [x] Eigene Speisekarten-, Über-uns- und Kontaktseiten erstellen
+- [x] Mobil und Desktop im Browser prüfen
+- [x] Wasabi-Pop-Redesign mit Editorial-Typografie umsetzen
+- [x] Neues Design auf Mobilgerät und Desktop prüfen
+- [x] Taktile Hover-, Fokus- und Touch-Effekte ergänzen und prüfen
+- [x] Gesamte Website an die warme Speisekarten-Gestaltung angleichen
+- [x] Vollständige Speisekarte mit Bildern, Filtern und Details umsetzen
+- [x] Smartphone, Tablet und Desktop abschließend prüfen
